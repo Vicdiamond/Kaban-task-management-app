@@ -88,6 +88,23 @@ function AddNewTaskEditModal({ selectedTask, type }) {
       return;
     }
 
+    const subtasksNames = newTask.subtasks.map((subtask) =>
+      subtask.title.toLowerCase()
+    );
+
+    const duplicateSubtasksName = subtasksNames.some(
+      (name, index) => subtasksNames.indexOf(name) !== index
+    );
+
+    if (duplicateSubtasksName) {
+      setError((prevError) => ({
+        ...prevError,
+        subtask: "Subtasks name must be unique",
+      }));
+
+      return;
+    }
+
     const emptySubtasks = newTask.subtasks.filter(
       (subtask) => subtask.title.trim() === ""
     );

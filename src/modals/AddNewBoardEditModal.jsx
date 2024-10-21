@@ -31,6 +31,7 @@ function AddNewBoardEditModal({ selectedBoard, type }) {
   }, []);
 
   function createNewBoard() {
+    // check if board name is empty
     if (!newBoard.name) {
       setError((prevError) => ({
         ...prevError,
@@ -39,6 +40,7 @@ function AddNewBoardEditModal({ selectedBoard, type }) {
       return;
     }
 
+    // check if columns are empty
     if (newBoard.columns.length === 0) {
       setError((prevError) => ({
         ...prevError,
@@ -48,6 +50,21 @@ function AddNewBoardEditModal({ selectedBoard, type }) {
       return;
     }
 
+    // check if columns have unique names
+    const columnNames = newBoard.columns.map((col) => col.name.toLowerCase());
+    const hasDuplicateNames = columnNames.some(
+      (name, index) => columnNames.indexOf(name) !== index
+    );
+
+    if (hasDuplicateNames) {
+      setError((prevError) => ({
+        ...prevError,
+        columns: "Column names must be unique",
+      }));
+      return;
+    }
+
+    // check if columns have empty names
     const emptyColumns = newBoard.columns.filter(
       (column) => column.name.trim() === ""
     );
@@ -61,6 +78,7 @@ function AddNewBoardEditModal({ selectedBoard, type }) {
       return;
     }
 
+    // check if board name already exists
     !selectedBoard &&
       boards.map((board) => {
         if (newBoard.name.toLowerCase() === board.name.toLowerCase()) {
@@ -72,6 +90,7 @@ function AddNewBoardEditModal({ selectedBoard, type }) {
         return;
       });
 
+    // check if board name already exists
     const boardExists = boards.some(
       (board) => board.name.toLowerCase() === newBoard.name.toLowerCase()
     );
