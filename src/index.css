@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  /* background-color: #000112; */
+  /* overflow: hidden; */
+  /* height: 100vh; */
+  min-height: 100dvh;
+  overflow-x: hidden;
+}
+.plus-jakarta-sans-body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.active {
+  background-color: #635fc7;
+  color: white;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.sidebar {
+  animation: slideIn 0.5s ease-out;
+}
+
+.sidebar.slide-out {
+  animation: slideOut 0.5s ease-out forwards;
+}
+
+@keyframes moveIn {
+  0% {
+    transform: translateY(-100%);
+    /* transform: ; */
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.cart {
+  animation: moveIn 0.5s ease-in-out;
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  position: relative;
+  cursor: pointer;
+  background-color: white; /* White background when not checked */
+}
+
+input[type="checkbox"]:checked {
+  background-color: #6a0dad; /* Purple color when checked */
+  border-color: #6a0dad; /* Change the border color to match */
+}
+
+input[type="checkbox"]:checked::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 5px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  left: 4px;
+  top: 4px;
+}
+
+.bars-5 {
+  width: 45px;
+  aspect-ratio: 0.75;
+  --c: no-repeat linear-gradient(#635fc7 0 0);
+  background: var(--c) 0% 100%, var(--c) 50% 100%, var(--c) 100% 100%;
+  background-size: 20% 65%;
+  animation: b5 1s infinite linear;
+}
+@keyframes b5 {
+  20% {
+    background-position: 0% 50%, 50% 100%, 100% 100%;
+  }
+  40% {
+    background-position: 0% 0%, 50% 50%, 100% 100%;
+  }
+  60% {
+    background-position: 0% 100%, 50% 0%, 100% 50%;
+  }
+  80% {
+    background-position: 0% 100%, 50% 100%, 100% 0%;
+  }
+}
