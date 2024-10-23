@@ -10,10 +10,10 @@ function Sidebar() {
   const { isDarkMode } = useSelector((store) => store.boards);
 
   return (
-    <div
-      className={`max-w-[261px] w-full hidden md:flex flex-col items-start py-2 h-screen md:max-w-[300px] ${
+    <aside
+      className={` w-full hidden md:flex flex-col items-start py-2 h-screen ${
         isDarkMode ? "bg-[#2B2C37]" : "bg-white"
-      }  border-r-[1px] border-[#979797] sidebar`}
+      }  border-r-[1px] border-[#979797] sidebar md:col-span-2`}
     >
       <Logo />
       <div className=" mt-9 flex flex-col   justify-between h-full">
@@ -29,7 +29,7 @@ function Sidebar() {
           </button>
         </div>
       </div>
-    </div>
+    </aside>
   );
 }
 

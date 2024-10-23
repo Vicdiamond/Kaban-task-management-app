@@ -31,7 +31,6 @@ function App() {
                 </React.Suspense>
               }
             />
-            {/* Add other protected routes here */}
           </Route>
         </Routes>
       </BrowserRouter>

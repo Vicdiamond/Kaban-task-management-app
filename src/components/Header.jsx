@@ -132,3 +132,11 @@ function Header() {
 }
 
 export default Header;
+
+{
+  /* <img
+src="./assets/settings-light-removebg-preview.png"
+alt="settings-icon"
+className="w-10"
+/> */
+}

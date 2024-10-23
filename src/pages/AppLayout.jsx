@@ -18,12 +18,17 @@ function AppLayout() {
   );
 
   return (
-    <div className="md:flex plus-jakarta-sans-body relative">
+    <div className="md:grid grid-cols-10 plus-jakarta-sans-body relative">
       {isSidebarOpen && <Sidebar />}
-      <div className="w-full relative flex flex-col">
+
+      <div
+        className={`w-full  relative flex flex-col   ${
+          isSidebarOpen ? "md:col-span-8" : "md:col-span-10"
+        } `}
+      >
         <Header />
-        <div className="pt-3  overflow-hidden  h-[85vh] pr-3 pl-3">
-          <div className="overflow-auto h-full">
+        <div className="  overflow-hidden  h-[88vh] w-full pl-4">
+          <div className="overflow-auto h-full p-3">
             <BoardLayout />
           </div>
         </div>

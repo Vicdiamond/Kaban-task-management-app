@@ -46,9 +46,9 @@ function BoardLayout() {
 
   return (
     <div
-      className={`pl-4 relative flex  ${
+      className={` relative flex  ${
         isDarkMode ? "text-white" : "text-[#000112]"
-      }  w-full  max-h-full  `}
+      }  w-full  `}
     >
       <div className="flex w-full items-start">
         {status === "" && <ModePrompt />}
