@@ -27,7 +27,7 @@ function AppLayout() {
         } `}
       >
         <Header />
-        <div className="  overflow-hidden  h-[88vh] w-full pl-4">
+        <div className="  overflow-hidden  h-[86vh] w-full pl-4">
           <div className="overflow-auto h-full p-3">
             <BoardLayout />
           </div>
