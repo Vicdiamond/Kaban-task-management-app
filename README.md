@@ -1,6 +1,6 @@
 # 📝 Task Management App
 
-This project is a task management app designed to help users efficiently manage their tasks and boards. The goal is to create a feature-rich application that aligns with the provided design specifications.
+This project is a task management app designed to help users efficiently manage their tasks and boards. It provides a user-friendly interface for creating, organizing, and tracking tasks, making it an essential tool for individuals and teams alike.
 
 ## ✨ Features
 
